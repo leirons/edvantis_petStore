@@ -5,7 +5,7 @@
 
 ### Structure
 ```
-    /docker 
+    /docker
         /api -- Storage with all different version of api
             DockerFile -- DockerFile with current version of api
     /src
@@ -18,15 +18,15 @@
             - users.py -- All routers of users service
             /services
                 /pet
-                - logic.py -- database logic 
+                - logic.py -- database logic
                 - models.py  -- models of database
                 - schemes.py  -- pydantic schemes
                 /store
-                - logic.py -- database logic 
+                - logic.py -- database logic
                 - models.py  -- models of database
                 - schemes.py  -- pydantic schemes
                 /user
-                - logic.py -- database logic 
+                - logic.py -- database logic
                 - models.py  -- models of database
                 - schemes.py  -- pydantic schemes
         /core
@@ -44,7 +44,7 @@
             - store.py -- Exceptions of store service
             - user.py -- Exceptions of user service
             /middlewares
-            - authentication.py -- Authentication middleware for user, 
+            - authentication.py -- Authentication middleware for user,
             it takes request and check if user loged if True it returs pydantic scheme of user
             /repository
             - base.py -- Base CRUD for all services
@@ -69,10 +69,10 @@
         - test_email.py --  Tests of email
         - test_phone.py --  Tests of phone
         - test_user.py --  Tests of user service
-    pre-commig.config.yaml -- 
+    pre-commig.config.yaml --
     docker-compose.yml -
-     
-```     
+
+```
 
 ## How to run
 
@@ -80,7 +80,7 @@
 ```
 docker-compose up --build
 docker container ls
-docker exec (name of web service) alembic upgrade head  
+docker exec (name of web service) alembic upgrade head
 ```
 
 
@@ -107,7 +107,7 @@ REDIS_HOST=your
 
 ### Linux
 ```
-1 - python3 -m venv venv 
+1 - python3 -m venv venv
 2 - source venv/bin/activate
 3 - cd src
 4 - pip3 install pipenv

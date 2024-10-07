@@ -51,7 +51,7 @@ class UserLogic(BaseRepo):
         return True, None
 
     async def create_user(self, password: str, db: Session, user: schemes.UserCreate):
-        import time
+        pass
 
         try:
             if await self.check_email(user.email, db):
@@ -68,7 +68,7 @@ class UserLogic(BaseRepo):
 
             await db.commit()
             await db.refresh(db_user)
-        except Exception as exc:
+        except Exception:
             return False, ServerError
         return True, db_user
 
@@ -102,6 +102,6 @@ class UserLogic(BaseRepo):
             query = update(self.model).where(self.model.username == username).values(**user.dict())
             await db.execute(query)
             await db.commit()
-        except Exception as exc:
+        except Exception:
             return False, ServerError
         return True, user
